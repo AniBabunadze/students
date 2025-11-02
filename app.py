@@ -24,11 +24,6 @@ class Student(db.Model):
     def __repr__(self):
         return f"<Student {self.name}>"
 
-# პირველი გაშვებისას ერთი ჩაირთე ტერმინალში რომ შეიქმნას ბაზა:
-# >>> from app import db, app
-# >>> with app.app_context():
-# >>>     db.create_all()
-
 
 @app.route('/')
 def index():
