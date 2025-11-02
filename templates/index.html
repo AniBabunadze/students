@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-3">სტუდენტების სია</h2>
+
+{% if students %}
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>სახელი</th>
+            <th>მეილი</th>
+            <th>კურსი</th>
+            <th>შეფასება</th>
+            <th>თარიღი</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.id }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.course }}</td>
+            <td>{{ student.grade }}</td>
+            <td>{{ student.date_added.strftime("%Y-%m-%d") }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>სტუდენტები ჯერ არ არიან დამატებული.</p>
+{% endif %}
+
+{% endblock %}
